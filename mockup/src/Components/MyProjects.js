@@ -7,7 +7,18 @@ function MyProjects(props){
 
 return(
   <div>
-    <h4>hi {props.namee}</h4>
+    <h2>hi {props.namee}</h2>
+    <h5>applicants(link) | Date</h5>
+    <h5>View full listing (link)</h5>
+    <p> project description </p>
+    <p> Skills needed </p>
+
+    <p> total hours</p>
+    <p> Flat Rate</p>
+    <p>project completed checkbox</p>
+    <p>Icon and name of person(s) who completed project</p>
+    <button>Request Invoice</button>
+
   </div>)
 
 }
