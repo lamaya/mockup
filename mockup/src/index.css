@@ -18,6 +18,10 @@ body {
     border: none;
 }
 
+.project-info {
+  border-top: 12px solid #ff6433;
+}
+
 .nav-tabs {
     border-bottom: none;
 }
@@ -28,4 +32,32 @@ body {
 
 #red{
   color: red;
+}
+
+#logo {
+    border-radius: 50%;
+    position: absolute;
+    right: 64%;
+    width: 10%;
+    margin-top: 6%;
+}
+
+.projHeader{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    text-align: left;
+    color: white;
+}
+
+h1{
+  text-transform: capitalize;
+}
+.websiteBut{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    border: 20%;
+    border-radius: 14%;
 }

@@ -8,23 +8,21 @@ import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
 class ProjNav extends Component {
   render(){
     return(
-
-<div className="MyProjects">
-    <Navbar style={{"backgroundColor": "red", "border": "none"}}inverse collapseOnSelect>
-      <Nav>
-        <NavItem eventKey={1} href="#">Live Projects</NavItem>
-        <NavItem eventKey={2} href="#">Saved Projects</NavItem>
-        <NavItem eventKey={2} href="#">In Progress</NavItem>
-        <NavItem eventKey={2} href="#">Archive</NavItem>
-      </Nav>
-  </Navbar>
-  <div className="my-proj-header">
-    <h2>My Projects</h2>
-    <p style={{"fontSize": "12px", "padding": "0 20%"}}>Lorem ipsum dolor sit amet, ius paulo iuvaret vituperata ei, nec ea deleniti dissentiunt. Sea erant suscipit ad. Aeterno viderer complectitur quo cu. Ei nec nibh viris verear. His nibh indoctum accommodare te, id falli erroribus sed, duo illud exerci fabulas ea.
-    </p>
-    <hr />
-  </div>
-  </div>
+    <div className="MyProjects">
+        <Navbar style={{"backgroundColor": "red", "border": "none"}}inverse collapseOnSelect>
+          <Nav>
+            <NavItem eventKey={1} href="#">Live Projects</NavItem>
+            <NavItem eventKey={2} href="#">Saved Projects</NavItem>
+            <NavItem eventKey={2} href="#">In Progress</NavItem>
+            <NavItem eventKey={2} href="#">Archive</NavItem>
+          </Nav>
+      </Navbar>
+      <div className="my-proj-header">
+        <h2>My Projects</h2>
+        <p style={{"fontSize": "12px", "padding": "0 20%"}}>Lorem ipsum dolor sit amet, ius paulo iuvaret vituperata ei, nec ea deleniti dissentiunt. Sea erant suscipit ad. Aeterno viderer complectitur quo cu. Ei nec nibh viris verear. His nibh indoctum accommodare te, id falli erroribus sed, duo illud exerci fabulas ea.
+        </p>
+      </div>
+      </div>
       )
   }
 }

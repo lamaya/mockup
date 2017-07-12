@@ -39,7 +39,7 @@ return(
             <p> {props.skills} </p>
             <p id={paidID}> Invoice Not Received <button hidden={received}>Request Invoice</button></p>
             <p id={compID}> Project Completed </p>
-            <p>Icon and name of person(s) who completed project</p>
+            <p> Completed by: Name of Person</p>
             </Col>
          </Row>
       </Grid>

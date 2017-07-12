@@ -43,7 +43,7 @@ componentDidMount(){
      <Tab eventKey={1} title="My Projects">
      <ProjNav />
       <MyProjects project_name={projects.title} applicants={projects.applicants} date={projects.date} rate={projects.rate} skills={projects.skills} desciption={projects.desciption} hours={projects.hours} paid={projects.paid} completed={projects.completed}  />
-      <MyProjects project_name={projects2.title} applicants={projects.applicants} date={projects.date} rate={projects.rate} skills={projects.skills} desciption={projects.desciption} hours={projects.hours} paid={projects.paid} completed={projects.completed}  />
+      <MyProjects project_name={projects2.title} applicants={projects2.applicants} date={projects2.date} rate={projects2.rate} skills={projects2.skills} desciption={projects2.desciption} hours={projects2.hours} paid={projects2.paid} completed={projects2.completed}  />
       </Tab>
       <Tab eventKey={2} title="Manage Applicants">Manage Applicants</Tab>
       <Tab eventKey={3} title="Invoice Center" >Invoice Center</Tab>
@@ -53,7 +53,12 @@ componentDidMount(){
       <div className="Home">
       <section>
         <div className="project-header">
-        <a onClick={this.renderAllProjects.bind(this)}>{data.project_name}</a>
+        <img id="logo" src="projOrphas.png"/>
+        <div className="projHeader">
+        <h1>{data.project_name}</h1>
+        <h2>{data.text}</h2>
+        <button className="websiteBut">View Website</button>
+        </div>
          </div>
          <div className="tabs">
           {tabsInstance}
