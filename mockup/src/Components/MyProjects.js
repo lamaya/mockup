@@ -5,7 +5,6 @@ import { tabsInstance, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col } from 
 
 
 function MyProjects(props){
-
     var paid = props.paid
     var completed = props.completed
     var paidID = "";
@@ -21,10 +20,10 @@ function MyProjects(props){
     } if ( completed !== "yes"){
         compID = "red"
     }
-
 return(
 <div className="MyProjects">
-   <ProjNav />
+  <div className="t">
+   </div>
    <div className="project-info">
       <Grid>
          <Row className="show-grid">
