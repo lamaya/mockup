@@ -32,7 +32,9 @@ const navbarInstance = (
       </Nav>
       </Nav>
     </Navbar.Collapse>
+
   </Navbar>
+
   )
 return(
   <div>

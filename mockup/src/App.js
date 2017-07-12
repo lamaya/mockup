@@ -10,6 +10,14 @@ class App extends Component {
       <div className="App">
       <NavBar />
       <Home />
+      <Navbar stickyBottom >
+        <Nav>
+        <NavItem eventKey={1} href="#">FOOTER ONE</NavItem>
+        <NavItem eventKey={2} href="#">FOOTER TWO</NavItem>
+        <NavItem eventKey={2} href="#">FOOTER THREE</NavItem>
+        <NavItem eventKey={2} href="#">FOOTER FOUR</NavItem>
+        </Nav>
+      </Navbar>
       </div>
     );
   }

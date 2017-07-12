@@ -32,7 +32,7 @@ componentDidMount(){
     let info = this.state.info
     let label = this.state.label
     const tabsInstance = (
-    <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
+    <Tabs defaultActiveKey={1} animation={true} id="noanim-tab-example">
      <Tab eventKey={1} title="My Projects"><MyProjects namee={label} /></Tab>
       <Tab eventKey={2} title="Manage Applicants">Manage Applicants</Tab>
       <Tab eventKey={3} title="Invoice Center" >Invoice Center</Tab>
