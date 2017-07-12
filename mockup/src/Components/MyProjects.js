@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
-import { tabsInstance, Tab, Tabs } from 'react-bootstrap';
+import { tabsInstance, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col } from 'react-bootstrap';
 
 
 function MyProjects(props){
-  const label = props.title;
-  // same as:
-  // const {to, label} = props.details;
-
+  const title = props.title;
 return(
   <div className="MyProjects">
     <Navbar style={{"backgroundColor": "red", "border": "none"}}inverse collapseOnSelect>
@@ -25,21 +22,87 @@ return(
     <hr />
   </div>
   <div className="project-info">
-    <h2>hi {props.namee}</h2>
-    <h5>applicants(link) | Date</h5>
+  <Grid>
+    <Row className="show-grid">
+      <Col style={{"marginTop": "8%"}} md={6} mdPush={6}>
+      <p> total hours</p>
+    <p> Flat Rate</p></Col>
+      <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
+      <h2>{props.project_name}</h2>
+    <h5>{props.applicants}</h5>
     <h5>View full listing (link)</h5>
-    <p> project description </p>
+    <p> project description</p>
     <p> Skills needed </p>
 
-    <p> total hours</p>
-    <p> Flat Rate</p>
-    <p>project completed checkbox</p>
-    <p>Icon and name of person(s) who completed project</p>
-    <button>Request Invoice</button>
+    <Completion/>
+    <Invoice/>
+    <p>Icon and name of person(s) who completed project</p></Col>
+    </Row>
+  </Grid>
+
   </div>
   </div>
   )
+}
+class Invoice extends Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.renderProject = this.renderProject.bind(this)
+  }
+  renderProject() {
+    var word = "Invoice Receivedd"
+    var classType = "";
+    var received = "";
+    if (word === "Invoice Received"){
+      classType = "green"
+      received = "true"
+      } else {
+      classType = "red"
+      }
+    return (
+      <div className="quizContainer">
+      <p className={classType}>{word} <button hidden={received}>request invoice</button></p>
 
+      <p></p>
+      </div>
+    );
+  }
+  render() {
+    return (
+      <div>
+      {this.renderProject()}
+      </div>
+    );
+  }
+}
+class Completion extends Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.renderProject = this.renderProject.bind(this)
+  }
+  renderProject() {
+    var word = "Project Completed"
+    var classType = "";
+    if (word === "Project Completed"){
+      classType = "green"
+      } else {
+      classType = "red"
+      }
+    return (
+      <div className="quizContainer">
+      <p className={classType}>{word}</p>
+      </div>
+    );
+  }
+  render() {
+    return (
+      <div>
+      {this.renderProject()}
+      </div>
+    );
+  }
 }
 
 export default MyProjects;
