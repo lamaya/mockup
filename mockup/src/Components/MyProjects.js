@@ -36,7 +36,7 @@ return(
             <h5>{props.applicants} | {props.date}</h5>
             <a>View full listing</a>
             <p> {props.description}</p>
-            <p> {props.skills} </p>
+            <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <p id={paidID}> Invoice Not Received <button hidden={received}>Request Invoice</button></p>
             <p id={compID}> Project Completed </p>
             <p> Completed by: Name of Person</p>

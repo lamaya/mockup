@@ -53,6 +53,10 @@ body {
 h1{
   text-transform: capitalize;
 }
+
+h2, h4{
+  font-family: 'Playfair Display', serif;
+}
 .websiteBut{
     font-family: inherit;
     font-size: inherit;
