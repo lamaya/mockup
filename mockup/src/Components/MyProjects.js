@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProjNav from './ProjNav';
+import Completed from './Completed';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
 import { tabsInstance, Modal, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 
@@ -46,12 +47,12 @@ return(
             <a href="" target="_blank">View full listing</a>
 
             <h5>
-            <Request/>
+            <Applicants />
             <a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
-            <div id={compID}><img style={{"width":"5%"}} src="yes.svg"/>
-            <p> Project Completed </p>
+            <div >
+            {props.completed ? <NotCompleted /> : <Completed />}
             </div>
             <div >
             {props.paid ? "An invoice has been submitted - click to view" : <RequestInvoice/>}
@@ -65,7 +66,7 @@ return(
 </div>
   )
 }
-class Request extends Component {
+class Applicants extends Component {
   constructor(...args) {
     super(...args);
 
@@ -81,9 +82,9 @@ class Request extends Component {
         <p>Developer</p>
         <p>
           <Button style={{
-    position: "absolute",
-    left: "130%",
-    top: "28%",
+            position: "absolute",
+            left: "130%",
+            top: "28%",
 }}
 bsStyle="primary" bsSize="small">View Profile</Button>
         </p>
@@ -114,13 +115,27 @@ bsStyle="primary" bsSize="small">View Profile</Button>
     );
   }
 }
+class NotCompleted extends Component {
+ render(){
+    return (
+      <div>
+        <div id="">
+          <input type="checkbox" disabled="false"/>
+           Project not completed
+          </div>
+      </div>
+     );
+  }
+}
+
 class RequestInvoice extends Component {
   constructor() {
     super();
     this.state = {
       showModal: false,
       request: "Request Invoice",
-      disable: false
+      disable: false,
+      status: "No invoices have been received",
      }
     this.open = this.open.bind(this)
     this.close = this.close.bind(this)
@@ -129,7 +144,8 @@ class RequestInvoice extends Component {
     this.setState({
       showModal: false,
       request: "Invoice Request Submitted",
-      disable: true
+      disable: true,
+      status: "Invoice pending",
        });
   }
   open(){
@@ -137,13 +153,13 @@ class RequestInvoice extends Component {
       showModal: true
     })
   }
-
   render() {
     var request = this.state.request
     var disable = this.state.disable
+    var status = this.state.status
     return (
       <div>
-        <p>No invoices have been received</p>
+        <p>{status}</p>
 
         <Button disabled={disable}
           bsStyle="danger"
