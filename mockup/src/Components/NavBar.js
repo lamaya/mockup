@@ -5,13 +5,12 @@ class NavBar extends Component {
 
 render(){
 const navbarInstance = (
-  <Navbar inverse collapseOnSelect>
+  <Navbar inverse collapseOnSelect id="main-nav">
     <Navbar.Header>
-
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-      <Nav>
+      <Nav >
         <NavItem eventKey={1} href="#">How It Works</NavItem>
         <NavItem eventKey={2} href="#">Browse Projects</NavItem>
         <Navbar.Brand>

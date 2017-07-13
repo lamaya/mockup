@@ -42,8 +42,9 @@ return(
             </Col>
             <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
             <h2>{props.project_name}</h2>
-            <h5><a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
             <a >View full listing</a>
+
+            <h5><a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <p id={paidID}> Invoice Not Received <button hidden={received}>Request Invoice</button></p>

@@ -9,7 +9,7 @@ class ProjNav extends Component {
   render(){
     return(
     <div className="MyProjects-header">
-        <Navbar style={{"backgroundColor": "red", "border": "none", "borderRadius": "0"}}inverse collapseOnSelect>
+        <Navbar style={{"backgroundColor": "red", "border": "none", "borderRadius": "0"}}inverse collapseOnSelect id="main-nav">
           <Nav>
             <NavItem eventKey={1} href="#">Live Projects</NavItem>
             <NavItem eventKey={2} href="#">Saved Projects</NavItem>
