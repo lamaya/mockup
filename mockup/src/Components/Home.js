@@ -70,7 +70,7 @@ componentDidMount(){
         <div className="projHeader">
         <h1 style={{"textTransform": "uppercase"}}>{data.project_name}</h1>
         <h3>{data.text}</h3>
-        <button className="websiteBut">View Website</button>
+        <a style={{"color": "white"}} href="http://www.projectorphans.org/" target="_blank"><button  className="websiteBut">View Website</button></a>
         </div>
          </div>
          <div className="tabs">

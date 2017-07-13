@@ -3,6 +3,11 @@ import ProjNav from './ProjNav';
 import Completed from './Completed';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
 import { tabsInstance, Modal, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 
 function MyProjects(props){
@@ -44,8 +49,7 @@ return(
             </Col>
             <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
             <h2>{props.project_name}</h2>
-            <a href="" target="_blank">View full listing</a>
-
+            <a href="http://www.sample-listing.surge.sh" target="_blank"> View Full Listing</a>
             <h5>
             {props.date}<Applicants /> </h5>
             <p> {props.description}</p>
@@ -78,7 +82,7 @@ class Applicants extends Component {
     this.state = {};
   }
   render() {
-    const thumbnailInstance = (
+  const thumbnailInstance = (
   <Grid>
     <Row>
     <Col xs={6} md={4}>
@@ -86,7 +90,30 @@ class Applicants extends Component {
         <h5>Laura Amaya</h5>
         <p>Developer</p>
         <p>
+        <div className="caption-select">
+        <img style={{ "width":"13%", left: "-15%", position: "absolute"}}src="star.png"/>
+            <p>Selected Applicant</p>
+          </div>
           <Button style={{
+            position: "absolute",
+            left: "130%",
+            top: "28%",
+          }} bsStyle="primary" bsSize="small">View Profile</Button>
+        </p>
+      </Thumbnail>
+    </Col>
+
+    </Row>
+  </Grid>
+  )
+  const thumbnailInstance2 = (
+  <Grid>
+    <Row>
+    <Col xs={6} md={4}>
+      <Thumbnail src="photo-2.jpg" alt="242x200">
+        <h5>Laura Amaya</h5>
+        <p>Developer</p>
+        <p><Button style={{
             position: "absolute",
             left: "130%",
             top: "28%",
@@ -109,7 +136,7 @@ class Applicants extends Component {
             {thumbnailInstance}
             </Well>
            <Well>
-            {thumbnailInstance}
+            {thumbnailInstance2}
 
             </Well>
           </div>

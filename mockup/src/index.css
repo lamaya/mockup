@@ -15,6 +15,13 @@ body {
   /*height: 250px;*/
 }
 
+.caption-select{
+    position: absolute;
+    top: 0%;
+    left: 122%;
+    width: 120%;
+}
+
 .manage-applicants{
   height: 500px;
 }
