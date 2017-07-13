@@ -12,7 +12,7 @@ body {
 }
 
 .MyProjects-header{
-  height: 250px;
+  /*height: 250px;*/
 }
 
 .manage-applicants{
@@ -29,6 +29,7 @@ body {
 
 .project-info {
   border-top: 12px solid #ff6433;
+  padding-bottom: 2%;
 }
 
 .nav-tabs {
@@ -146,4 +147,71 @@ h3 {
     position: absolute;
     top: 6%;
     left: 33%;
+}
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control_indicator {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #ec9d9d;
+    border: 0px solid #000000;
+}
+.control-radio .control_indicator {
+    border-radius: undefined%;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #36BB30;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+    background: #0AB111;
+    opacity: 1;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 7px;
+    top: 1px;
+    width: 4px;
+    height: 13px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #FFFFFF;
 }

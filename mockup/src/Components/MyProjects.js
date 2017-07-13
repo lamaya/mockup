@@ -52,13 +52,19 @@ return(
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <div >
-            {props.completed ? <NotCompleted /> : <Completed />}
+            {props.completed ? <CheckCompleted/> : <Completed />}
             </div>
             <div >
-            {props.paid ? "An invoice has been submitted - click to view" : <RequestInvoice/>}
+            {props.paid ? (<div>
+            <Button disabled={true}
+              bsStyle="success"
+              bsSize="medium"
+              >
+              An invoice has been received
+              </Button>
+              <ViewInvoice />
+              </div> ): <RequestInvoice/>}
             </div>
-
-            <p> Completed by: Name of Person</p>
             </Col>
          </Row>
       </Grid>
@@ -114,36 +120,35 @@ class Applicants extends Component {
     );
   }
 }
-class NotCompleted extends Component {
+class CheckCompleted extends Component {
   constructor() {
     super();
     this.state = {
-      disable: false,
-      status: "Project Not Completed",
+      checked: false,
      }
     this.onCheck = this.onCheck.bind(this)
   }
-  onCheck() {
+  onCheck(e) {
   this.setState({
-    disable: true,
-    status: "Project Completed",
+    checked: e.target.checked,
      });
 }
  render(){
-  var disable = this.state.disable
-  var status = this.state.status
+  var checked = this.state.checked
     return (
       <div>
-        <div id="">
-          <input onChange={this.onCheck} type="checkbox" disabled={disable}/>
-           {status}
-          </div>
+      <div className="control-group">
+        <label className="control control-checkbox">
+            {checked ? "Project Completed" : "Project Not Yet Completed" }
+        <input type="checkbox" checked={checked} onChange={this.onCheck} />
+        <div className="control_indicator"></div>
+        </label>
       </div>
+    </div>
      );
   }
 }
-
-class RequestInvoice extends Component {
+class ViewInvoice extends Component {
   constructor() {
     super();
     this.state = {
@@ -158,15 +163,64 @@ class RequestInvoice extends Component {
   close() {
     this.setState({
       showModal: false,
-      request: "Invoice Request Submitted",
-      disable: true,
-      status: "Invoice pending",
        });
-  }
+   }
   open(){
     this.setState({
       showModal: true
     })
+  }
+  render() {
+    return (
+      <div>
+        <a onClick={this.open}>view invoice</a>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title>Invoice For Project</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Invoice for this project</h4>
+            <img style={{"width":"95%"}} src="invoice.png"/>
+          </Modal.Body>
+          <Modal.Footer>
+            <a onClick={this.close}>View All Invoices</a>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+class RequestInvoice extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+      request: "Request Invoice",
+      disable: false,
+      status: "No invoices have been received",
+     }
+    this.open = this.open.bind(this)
+    this.close = this.close.bind(this)
+    this.hide = this.hide.bind(this)
+  }
+  close() {
+    this.setState({
+      showModal: false,
+      request: "Invoice Request Submitted",
+      disable: true,
+      status: "Invoice pending",
+       });
+   }
+  open(){
+    this.setState({
+      showModal: true
+    })
+  }
+  hide() {
+  this.setState({
+    showModal: false,
+     });
   }
   render() {
     var request = this.state.request
@@ -175,7 +229,6 @@ class RequestInvoice extends Component {
     return (
       <div>
         <p>{status}</p>
-
         <Button disabled={disable}
           bsStyle="danger"
           bsSize="medium"
@@ -183,12 +236,12 @@ class RequestInvoice extends Component {
         >
           {request}
         </Button>
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={this.hide}>
           <Modal.Header closeButton>
             <Modal.Title >Request Invoice</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Click submit to send the Ana the developer/designer a request</h4>
+            <h4>Click submit to send the Laura the developer/designer a request</h4>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Submit</Button>

@@ -3,7 +3,7 @@ import organizations from '../organizations';
 import NavBar from './NavBar';
 import MyProjects from './MyProjects';
 import { tabsInstance, Tab, Tabs } from 'react-bootstrap';
-import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar,NavItem,MenuItem,NavDropdown, Row, Grid, Col } from 'react-bootstrap';
 
 class ProjNav extends Component {
   render(){
@@ -18,9 +18,8 @@ class ProjNav extends Component {
           </Nav>
       </Navbar>
       <div className="my-proj-header"  style={{marginTop: "4%"}}  >
-        <h2>My Projects</h2>
-        <p style={{"fontSize": "12px", "padding": "0 20%"}}>Lorem ipsum dolor sit amet, ius paulo iuvaret vituperata ei, nec ea deleniti dissentiunt. Sea erant suscipit ad. Aeterno viderer complectitur quo cu. Ei nec nibh viris verear. His nibh indoctum accommodare te, id falli erroribus sed, duo illud exerci fabulas ea.
-        </p>
+
+
       </div>
       </div>
       )
