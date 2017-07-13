@@ -85,8 +85,7 @@ class Applicants extends Component {
             position: "absolute",
             left: "130%",
             top: "28%",
-}}
-bsStyle="primary" bsSize="small">View Profile</Button>
+          }} bsStyle="primary" bsSize="small">View Profile</Button>
         </p>
       </Thumbnail>
     </Col>
@@ -116,12 +115,28 @@ bsStyle="primary" bsSize="small">View Profile</Button>
   }
 }
 class NotCompleted extends Component {
+  constructor() {
+    super();
+    this.state = {
+      disable: false,
+      status: "Project Not Completed",
+     }
+    this.onCheck = this.onCheck.bind(this)
+  }
+  onCheck() {
+  this.setState({
+    disable: true,
+    status: "Project Completed",
+     });
+}
  render(){
+  var disable = this.state.disable
+  var status = this.state.status
     return (
       <div>
         <div id="">
-          <input type="checkbox" disabled="false"/>
-           Project not completed
+          <input onChange={this.onCheck} type="checkbox" disabled={disable}/>
+           {status}
           </div>
       </div>
      );
