@@ -2,8 +2,49 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.project-header #logo {
+    border-radius: 50%;
+    position: absolute;
+    right: 64%;
+    width: 30%;
+    margin-top: 32%;
+}
+.Home .proect-Header {
+    top: 15%;
+}
+
+.Home .websiteBut {
+    font-family: inherit;
+    font-size: inherit;
+    width: 155%;
+  }
+.Home .nav.nav-tabs {
+    font-family: 'Oswald';
+    font-size: 11px;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+.Home h3{
+    width: 250%;
+    text-align: left;
+}
+.col-xs-6 {
+    width: 110%;
+}
+.container div.caption {
+    padding: 9px;
+    color: #333;
+    position: absolute;
+    top: 6%;
+    left: 22%;
+}
 .project-header{
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(/proj-orphans.jpg) no-repeat center;
   height: 335px;
@@ -65,6 +106,14 @@ body {
     width: 10%;
     margin-top: 9%;
 }
+#logo-header {
+    /* border-radius: 50%; */
+    position: absolute;
+    right: 40%;
+    width: 20%;
+    color: white;
+    margin-top: 9%;
+}
 
 .projHeader{
     position: absolute;
@@ -88,7 +137,7 @@ h3 {
 .websiteBut{
     font-family: inherit;
     font-size: inherit;
-    width: 33%;
+    width: 46%;
     line-height: inherit;
     background-color: transparent;
     border-radius: 8%;
@@ -221,4 +270,20 @@ h3 {
 }
 .control-checkbox input:disabled ~ .control_indicator:after {
     border-color: #FFFFFF;
+}
+.navbar-default {
+    background-color: black;
+    border: none;
+    border-radius: 0px;
+    height: 160px;
+    margin-bottom: auto;
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
 }

@@ -12,10 +12,10 @@ class App extends Component {
       <Home />
       <Navbar stickyBottom >
         <Nav>
-        <NavItem eventKey={1} href="#">FOOTER ONE</NavItem>
-        <NavItem eventKey={2} href="#">FOOTER TWO</NavItem>
-        <NavItem eventKey={2} href="#">FOOTER THREE</NavItem>
-        <NavItem eventKey={2} href="#">FOOTER FOUR</NavItem>
+        <NavItem eventKey={1} href="#">Please Help</NavItem>
+        <NavItem eventKey={2} href="#">Things Lawers Love</NavItem>
+        <NavItem eventKey={2} href="#">Who Are These People</NavItem>
+        <NavItem eventKey={2} href="#">Can I Have Yo Number?</NavItem>
         </Nav>
       </Navbar>
       </div>

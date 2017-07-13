@@ -67,7 +67,7 @@ componentDidMount(){
       <section>
         <div className="project-header">
         <img id="logo" src="projOrphas.png"/>
-        <div className="projHeader">
+        <div id="logo-header">
         <h1 style={{"textTransform": "uppercase"}}>{data.project_name}</h1>
         <h3>{data.text}</h3>
         <a style={{"color": "white"}} href="http://www.projectorphans.org/" target="_blank"><button  className="websiteBut">View Website</button></a>
