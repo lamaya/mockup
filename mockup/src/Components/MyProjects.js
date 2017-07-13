@@ -47,8 +47,7 @@ return(
             <a href="" target="_blank">View full listing</a>
 
             <h5>
-            <Applicants />
-            <a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
+            {props.date}<Applicants /> </h5>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <div >
@@ -101,8 +100,8 @@ class Applicants extends Component {
   )
     return (
       <div>
-        <a onClick={ ()=> this.setState({ open: !this.state.open })}>
-          View All Applicants
+        <a style={{"textDecoration": "underline"}} onClick={ ()=> this.setState({ open: !this.state.open })}>
+          (2) Applicants
         </a>
         <Collapse in={this.state.open}>
           <div>

@@ -3,6 +3,11 @@ import NavBar from './Components/NavBar';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
 import Home from './Components/Home';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 class App extends Component {
   render() {

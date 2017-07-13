@@ -17,8 +17,14 @@ class ProjNav extends Component {
             <NavItem eventKey={2} href="#">Archive</NavItem>
           </Nav>
       </Navbar>
-      <div className="my-proj-header"  style={{marginTop: "4%"}}  >
-
+      <div className="my-proj-header"  >
+      <Grid>
+         <Row className="show-grid">
+         <h2>My Projects</h2>
+        <p style={{"fontSize": "12px"}}>Lorem ipsum dolor sit amet, ius paulo iuvaret vituperata ei, nec ea deleniti dissentiunt. Sea erant suscipit ad. Aeterno viderer complectitur quo cu. Ei nec nibh viris verear. His nibh indoctum accommodare te, id falli erroribus sed, duo illud exerci fabulas ea.
+        </p>
+         </Row>
+      </Grid>
 
       </div>
       </div>
