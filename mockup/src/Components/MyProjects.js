@@ -10,6 +10,7 @@ function MyProjects(props){
     var paidID = "";
     var compID = "";
     var received = "";
+    var submit = !props.paid ? "" : "Request An Invoice";
     if ( paid === "yes"){
       paidID = "green"
       received = "true"
@@ -47,8 +48,13 @@ return(
             <h5><a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
-            <p id={paidID}> Invoice Not Received <button hidden={received}>Request Invoice</button></p>
-            <p id={compID}> Project Completed </p>
+            <div id={compID}><img style={{"width":"5%"}} src="yes.svg"/>
+            <p> Project Completed </p>
+            </div>
+            <div >
+            {props.paid ? "An invoice has been submitted - click to view" : <Request/>}
+            </div>
+
             <p> Completed by: Name of Person</p>
             </Col>
          </Row>
@@ -56,6 +62,31 @@ return(
    </div>
 </div>
   )
+}
+class Request extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      request: "request"
+    };
+    this.handleClick = this.handleClick.bind(this);
+  };
+  handleClick(){
+    this.setState({
+        request: "submitted"
+      });
+  }
+  render(){
+   var request = this.state.request
+
+    return(
+    <div className="inv">
+      No invoice has been submitted -
+      <button onClick={this.handleClick}>{request}</button>
+      </div>
+      )
+  }
 }
 
 
