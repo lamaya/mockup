@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProjNav from './ProjNav';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
-import { tabsInstance, Modal, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col } from 'react-bootstrap';
+import { tabsInstance, Modal, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 
 
 function MyProjects(props){
@@ -43,9 +43,11 @@ return(
             </Col>
             <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
             <h2>{props.project_name}</h2>
-            <a >View full listing</a>
+            <a href="" target="_blank">View full listing</a>
 
-            <h5><a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
+            <h5>
+            <Request/>
+            <a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <div id={compID}><img style={{"width":"5%"}} src="yes.svg"/>
@@ -64,31 +66,54 @@ return(
   )
 }
 class Request extends Component {
+  constructor(...args) {
+    super(...args);
 
-  constructor() {
-    super();
-    this.state = {
-      request: "request"
-    };
-    this.handleClick = this.handleClick.bind(this);
-  };
-  handleClick(){
-
-    // this.setState({
-    //     request: "submitted"
-    //   });
+    this.state = {};
   }
-  render(){
-   var request = this.state.request
-    return(
-    <div className="inv">
-      No invoice has been submitted -
-      <button onClick={this.handleClick}>click</button>
+  render() {
+    const thumbnailInstance = (
+  <Grid>
+    <Row>
+    <Col xs={6} md={4}>
+      <Thumbnail src="laura-pic.png" alt="242x200">
+        <h5>Laura Amaya</h5>
+        <p>Developer</p>
+        <p>
+          <Button style={{
+    position: "absolute",
+    left: "130%",
+    top: "28%",
+}}
+bsStyle="primary" bsSize="small">View Profile</Button>
+        </p>
+      </Thumbnail>
+    </Col>
+
+    </Row>
+  </Grid>
+  )
+    return (
+      <div>
+        <a onClick={ ()=> this.setState({ open: !this.state.open })}>
+          View All Applicants
+        </a>
+        <Collapse in={this.state.open}>
+          <div>
+            <Well>
+            {thumbnailInstance}
+            </Well>
+           <Well>
+            {thumbnailInstance}
+
+            </Well>
+          </div>
+
+        </Collapse>
       </div>
-      )
+    );
   }
 }
-
 class RequestInvoice extends Component {
   constructor() {
     super();
@@ -121,7 +146,7 @@ class RequestInvoice extends Component {
         <p>No invoices have been received</p>
 
         <Button disabled={disable}
-          bsStyle="primary"
+          bsStyle="danger"
           bsSize="medium"
           onClick={this.open}
         >
