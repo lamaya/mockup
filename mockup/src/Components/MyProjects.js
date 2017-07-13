@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProjNav from './ProjNav';
 import { Nav, Navbar,NavItem,MenuItem,NavDropdown } from 'react-bootstrap';
-import { tabsInstance, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col } from 'react-bootstrap';
+import { tabsInstance, Modal, Tab, Tabs, Button, Well, Collapse, Grid, Row, Col } from 'react-bootstrap';
 
 
 function MyProjects(props){
@@ -52,7 +52,7 @@ return(
             <p> Project Completed </p>
             </div>
             <div >
-            {props.paid ? "An invoice has been submitted - click to view" : <Request/>}
+            {props.paid ? "An invoice has been submitted - click to view" : <RequestInvoice/>}
             </div>
 
             <p> Completed by: Name of Person</p>
@@ -73,19 +73,73 @@ class Request extends Component {
     this.handleClick = this.handleClick.bind(this);
   };
   handleClick(){
-    this.setState({
-        request: "submitted"
-      });
+
+    // this.setState({
+    //     request: "submitted"
+    //   });
   }
   render(){
    var request = this.state.request
-
     return(
     <div className="inv">
       No invoice has been submitted -
-      <button onClick={this.handleClick}>{request}</button>
+      <button onClick={this.handleClick}>click</button>
       </div>
       )
+  }
+}
+
+class RequestInvoice extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+      request: "Request Invoice",
+      disable: false
+     }
+    this.open = this.open.bind(this)
+    this.close = this.close.bind(this)
+  }
+  close() {
+    this.setState({
+      showModal: false,
+      request: "Invoice Request Submitted",
+      disable: true
+       });
+  }
+  open(){
+    this.setState({
+      showModal: true
+    })
+  }
+
+  render() {
+    var request = this.state.request
+    var disable = this.state.disable
+    return (
+      <div>
+        <p>No invoices have been received</p>
+
+        <Button disabled={disable}
+          bsStyle="primary"
+          bsSize="medium"
+          onClick={this.open}
+        >
+          {request}
+        </Button>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title >Request Invoice</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Click submit to send the Ana the developer/designer a request</h4>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.close}>Submit</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
   }
 }
 
