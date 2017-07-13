@@ -49,7 +49,7 @@ return(
             </Col>
             <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
             <h2>{props.project_name}</h2>
-            <a href="http://www.sample-listing.surge.sh" target="_blank"> View Full Listing</a>
+            <a style={{"textDecoration": "underline"}} href="http://www.sample-listing.surge.sh" target="_blank"> View Full Listing</a>
             <h5>
             {props.date}<Applicants /> </h5>
             <p> {props.description}</p>
@@ -199,7 +199,7 @@ class ViewInvoice extends Component {
   render() {
     return (
       <div>
-        <a onClick={this.open}>view invoice</a>
+        <a style={{"textDecoration": "underline"}} onClick={this.open}>view invoice</a>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>Invoice For Project</Modal.Title>
@@ -224,7 +224,7 @@ class RequestInvoice extends Component {
       showModal: false,
       request: "Request Invoice",
       disable: false,
-      status: "No invoices have been received",
+      status: "No Invoices Have Been Received",
      }
     this.open = this.open.bind(this)
     this.close = this.close.bind(this)
@@ -235,7 +235,7 @@ class RequestInvoice extends Component {
       showModal: false,
       request: "Invoice Request Submitted",
       disable: true,
-      status: "Invoice pending",
+      status: "Invoice Pending",
        });
    }
   open(){
@@ -267,7 +267,7 @@ class RequestInvoice extends Component {
             <Modal.Title >Request Invoice</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Click submit to send the Laura the developer/designer a request</h4>
+            <h4>Click submit to send Laura the developer/designer a request</h4>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Submit</Button>
