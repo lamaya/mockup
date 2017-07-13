@@ -10,6 +10,14 @@ body {
   margin-top: -2%;
 }
 
+.MyProjects-header{
+  height: 250px;
+}
+
+.manage-applicants{
+  height: 500px;
+}
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     color: white;
     cursor: default;
@@ -24,6 +32,10 @@ body {
 
 .nav-tabs {
     border-bottom: none;
+}
+.navbar-nav {
+    float: none;
+    display: inline-block;
 }
 
 #green{
@@ -99,4 +111,8 @@ h3 {
     float: left;
     margin-bottom: -1px;
     width: 33.3%;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
 }

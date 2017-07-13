@@ -27,14 +27,23 @@ return(
    <div className="project-info">
       <Grid>
          <Row className="show-grid">
+
             <Col style={{"marginTop": "8%"}} md={6} mdPush={6}>
-            <p>{props.hours}</p>
-            <p>{props.rate}</p>
+            <Row className="show-grid">
+            <Col md={6}>
+            <h5 style={{"fontSize":"16px", "textTransform": "uppercase"}}>Total Hours <br/></h5>
+            <h2>{props.hours}</h2>
+            </Col>
+            <Col md={6}>
+            <h5 style={{"fontSize":"16px", "textTransform": "uppercase"}}>Flat Rate <br/></h5>
+            <h2>{props.rate}</h2>
+            </Col>
+            </Row>
             </Col>
             <Col style={{"textAlign": "left"}} md={6} mdPull={6}>
             <h2>{props.project_name}</h2>
-            <h5>{props.applicants} | {props.date}</h5>
-            <a>View full listing</a>
+            <h5><a style={{"textDecoration":"underline"}} href="#">{props.applicants} Applicants </a>| {props.date}</h5>
+            <a >View full listing</a>
             <p> {props.description}</p>
             <h4 style={{paddingTop: "5%"}}> {props.skills} </h4>
             <p id={paidID}> Invoice Not Received <button hidden={received}>Request Invoice</button></p>

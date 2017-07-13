@@ -45,8 +45,8 @@ componentDidMount(){
       <MyProjects project_name={projects.title} applicants={projects.applicants} date={projects.date} rate={projects.rate} skills={projects.skills} description={projects.description} hours={projects.hours} paid={projects.paid} completed={projects.completed}  />
       <MyProjects project_name={projects2.title} applicants={projects2.applicants} date={projects2.date} rate={projects2.rate} skills={projects2.skills} description={projects2.description} hours={projects2.hours} paid={projects2.paid} completed={projects2.completed}  />
       </Tab>
-      <Tab eventKey={2} title="Manage Applicants">Manage Applicants</Tab>
-      <Tab eventKey={3} title="Invoice Center" >Invoice Center</Tab>
+      <Tab eventKey={2} title="Manage Applicants"><section className="manage-applicants"></section></Tab>
+      <Tab eventKey={3} title="Invoice Center"><section className="manage-applicants"></section></Tab>
     </Tabs>
 );
     return (
