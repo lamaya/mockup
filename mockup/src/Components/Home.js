@@ -55,8 +55,8 @@ componentDidMount(){
         <div className="project-header">
         <img id="logo" src="projOrphas.png"/>
         <div className="projHeader">
-        <h1>{data.project_name}</h1>
-        <h2>{data.text}</h2>
+        <h1 style={{"textTransform": "uppercase"}}>{data.project_name}</h1>
+        <h3>{data.text}</h3>
         <button className="websiteBut">View Website</button>
         </div>
          </div>
